@@ -19,10 +19,10 @@ $oilType = '';
 $result_message = '';
 
 // Check if location and oil_type are set in the POST request
-if (isset($_GET['location']) && isset($_GET['oil_type'])) {
+if (isset($_post['location']) && isset($_post['oil_type'])) {
     // Get the location and oil type from the form submission
-    $location = $_GET['location'];
-    $oilType = $_GET['oil_type'];
+    $location = $_post['location'];
+    $oilType = $_post['oil_type'];
 
     // Prepare the SQL query to fetch availability
     $sql = "SELECT availability FROM oil_stock WHERE location = ? AND oil_type = ?";
